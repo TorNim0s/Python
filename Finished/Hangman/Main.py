@@ -5,6 +5,18 @@ made a few changes what do u think?
 
 import random
 
+Hangman = r"""
+ _    _
+| |  | |
+| |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
+|  __  |/ _' | '_ \ / _' | '_ ' _ \ / _' | '_ \
+| |  | | (_| | | | | (_| | | | | | | (_| | | | |
+|_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+__/ |
+|___/
+6
+"""
+
 HANGMAN_PHOTOS = {0: "x-------x",
                   1: "x-------x\n|\n|\n|\n|\n|",
                   2: "x-------x\n|       |\n|       0\n|\n|\n|",
@@ -49,14 +61,18 @@ def print_hangman(num_of_tries):
     global HANGMAN_PHOTOS
     print(HANGMAN_PHOTOS[num_of_tries])
 
-def choose_word(file_path):
+def choose_word(file_path, index):
     with open(file_path, "r") as file:
         words_list = file.read().split("\n")
-        return random.choice(words_list)
+        if (len(words_list) <= index):
+            return words_list[index - 1]
+
+    choose_word(input("Enter file path:: "))
+
 
 def main():
-    print("Wellcome to hangman game")
-    file_path = input("Please enter path to words list file: ")
+    print(Hangman)
+    file_path = input("Enter file path:: ")
 
     old_letters = []
 
