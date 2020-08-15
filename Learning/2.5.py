@@ -1,5 +1,5 @@
 class Animal:
-    def __init__(self, name, hunger = 0, talksound = "None"):
+    def __init__(self, name, hunger = 0, zoo_name = "Hayaton", talksound = "None"):
         """
         :param name: name of the animal -- for example dog named Fluffy
         :param hunger: amount of hunger the animal currently on
@@ -9,7 +9,7 @@ class Animal:
         self._name = name
         self._hunger = hunger
         self._talksound = talksound
-        self._zoo_name = "Hayaton"
+        self._zoo_name = zoo_name
 
     def get_name(self):
         """
