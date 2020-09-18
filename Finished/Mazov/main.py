@@ -1,4 +1,3 @@
-
 def calculate_ranges(list_core_range):
     list_new_range = []
 
